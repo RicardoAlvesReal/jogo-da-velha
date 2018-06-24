@@ -1,0 +1,121 @@
+<HTML>
+<HEAD>
+  <meta charset="utf-8">
+  <meta NAME="AUTHOR" CONTENT="RICARDO ALVES">
+  <meta NAME="DESCRIPTION" CONTENT="JOGO DA VELHA">
+  <meta NAME="KEY WORDS" CONTENT="JOGO, VELHA">
+ 
+  <TITLE>Jogo da velha</TITLE>
+</HEAD>
+<LINK rel="icon" href="jogo da velha.png" type="image/x-icon" />
+<SCRIPT type="text/javascript" src="jss.js"></SCRIPT>
+ 
+<BODY BGCOLOR="#FBFBFC" TEXT="#00000" ONLOAD="FocarBotao()">
+  <CENTER>
+  <FORM NAME="QUADRO">
+  <TABLE BORDER="1" CELLSPACING="2" CELLPADDING="10">
+    <TR>
+      <TD COLSPAN="3" ALIGN="CENTER" BGCOLOR="#FBFBFC">
+        <FONT FACE="VERDANA" SIZE="2"><B>
+        <MARQUEE>BOA SORTE MAN! (VOCÊ VAI PRECISAR)</MARQUEE>
+ 
+      </TD>
+    </TR>
+  <!-- PRIMEIRA LINHA DE BOTOES DO QUADRO -->
+    <TR>
+      <TD BGCOLOR="#FBFBFC" ALIGN="CENTER" VALIGN="MIDDLE" ONMOUSEOVER="this.bgColor='#D0D0D0'" ONMOUSEOUT="this.bgColor='#FBFBFC'">
+        <INPUT TYPE="BUTTON" NAME="L[1]C[1]" DISABLED VALUE="....." STYLE="font-family: arial; font-size: 25 px; font-weight: bold; background: #E0E0E0" ONCLICK="Usuario_Joga(1,1)">
+      </TD>
+      <TD BGCOLOR="#FBFBFC" ALIGN="CENTER" VALIGN="MIDDLE" ONMOUSEOVER="this.bgColor='#D0D0D0'" ONMOUSEOUT="this.bgColor='#FBFBFC'">
+        <INPUT TYPE="BUTTON" NAME="L[1]C[2]" DISABLED VALUE="....." STYLE="font-family: arial; font-size: 25 px; font-weight: bold; background: #E0E0E0" ONCLICK="Usuario_Joga(1,2)">
+ 
+      </TD>
+      <TD BGCOLOR="#FBFBFC" ALIGN="CENTER" VALIGN="MIDDLE" ONMOUSEOVER="this.bgColor='#D0D0D0'" ONMOUSEOUT="this.bgColor='#FBFBFC'">
+        <INPUT TYPE="BUTTON" NAME="L[1]C[3]" DISABLED VALUE="....." STYLE="font-family: arial; font-size: 25 px; font-weight: bold; background: #E0E0E0" ONCLICK="Usuario_Joga(1,3)">
+      </TD>
+    </TR>
+  <!-- SEGUNDA LINHA DE BOTOES DO QUADRO -->
+    <TR>
+      <TD BGCOLOR="#FBFBFC" ALIGN="CENTER" VALIGN="MIDDLE" ONMOUSEOVER="this.bgColor='#D0D0D0'" ONMOUSEOUT="this.bgColor='#FBFBFC'">
+        <INPUT TYPE="BUTTON" NAME="L[2]C[1]" DISABLED VALUE="....." STYLE="font-family: arial; font-size: 25 px; font-weight: bold; background: #E0E0E0" ONCLICK="Usuario_Joga(2,1)">
+ 
+      </TD>
+      <TD BGCOLOR="#FBFBFC" ALIGN="CENTER" VALIGN="MIDDLE" ONMOUSEOVER="this.bgColor='#D0D0D0'" ONMOUSEOUT="this.bgColor='#FBFBFC'">
+        <INPUT TYPE="BUTTON" NAME="L[2]C[2]" DISABLED VALUE="....." STYLE="font-family: arial; font-size: 25 px; font-weight: bold; background: #E0E0E0" ONCLICK="Usuario_Joga(2,2)">
+      </TD>
+      <TD BGCOLOR="#FBFBFC" ALIGN="CENTER" VALIGN="MIDDLE" ONMOUSEOVER="this.bgColor='#D0D0D0'" ONMOUSEOUT="this.bgColor='#FBFBFC'">
+        <INPUT TYPE="BUTTON" NAME="L[2]C[3]" DISABLED VALUE="....." STYLE="font-family: arial; font-size: 25 px; font-weight: bold; background: #E0E0E0" ONCLICK="Usuario_Joga(2,3)">
+      </TD>
+    </TR>
+  <!-- TERCEIRA LINHA DE BOTOES DO QUADRO -->
+ 
+    <TR>
+      <TD BGCOLOR="#FBFBFC" ALIGN="CENTER" VALIGN="MIDDLE" ONMOUSEOVER="this.bgColor='#D0D0D0'" ONMOUSEOUT="this.bgColor='#FBFBFC'">
+        <INPUT TYPE="BUTTON" NAME="L[3]C[1]" DISABLED VALUE="....." STYLE="font-family: arial; font-size: 25 px; font-weight: bold; background: #E0E0E0" ONCLICK="Usuario_Joga(3,1)">
+      </TD>
+      <TD BGCOLOR="#FBFBFC" ALIGN="CENTER" VALIGN="MIDDLE" ONMOUSEOVER="this.bgColor='#D0D0D0'" ONMOUSEOUT="this.bgColor='#FBFBFC'">
+        <INPUT TYPE="BUTTON" NAME="L[3]C[2]" DISABLED VALUE="....." STYLE="font-family: arial; font-size: 25 px; font-weight: bold; background: #E0E0E0" ONCLICK="Usuario_Joga(3,2)">
+      </TD>
+      <TD BGCOLOR="#FBFBFC" ALIGN="CENTER" VALIGN="MIDDLE" ONMOUSEOVER="this.bgColor='#D0D0D0'" ONMOUSEOUT="this.bgColor='#FBFBFC'">
+        <INPUT TYPE="BUTTON" NAME="L[3]C[3]" DISABLED VALUE="....." STYLE="font-family: arial; font-size: 25 px; font-weight: bold; background: #E0E0E0" ONCLICK="Usuario_Joga(3,3)">
+ 
+      </TD>
+    </TR>
+  <!-- CONFIGURAÇÕES DO JOGO -->
+    <TR>
+      <TD COLSPAN="3" ALIGN="CENTER">
+        <SELECT NAME="ESCOLHA" SIZE="2" STYLE="font-family: verdana; font-size: 8 pt;">
+          <OPTION VALUE=" O " SELECTED>Jogar com 'O'</OPTION>
+          <OPTION VALUE=" X ">Jogar com 'X'</OPTION>
+ 
+        </SELECT>
+        <SELECT NAME="Q_COMECA" SIZE="2" STYLE="font-family: verdana; font-size: 8 pt;">
+          <OPTION VALUE="PC" SELECTED>Computador começa</OPTION>
+          <OPTION VALUE="USU">Você começa</OPTION>
+        </SELECT>
+        <BR>
+        <SELECT NAME="NIVEL" SIZE="1" STYLE="font-family: verdana; font-size: 8 pt;">
+          <OPTION VALUE="D" SELECTED>HARDCORE</OPTION>
+ 
+          <OPTION VALUE="F">EASY</OPTION>
+        </SELECT>
+        <P>
+        <INPUT TYPE="BUTTON" VALUE="Iniciar jogo" NAME="BTJOGAR" STYLE="font-family: verdana; font-size: 8 pt; font-weight: bold; color: #0000DD; background: #d0d0d0;" ONCLICK="BTJOGAR_Click()" ONMOUSEOVER="this.style.background='#f0f0f0'" ONMOUSEOUT="this.style.background='#d0d0d0'">
+        <INPUT TYPE="BUTTON" VALUE="Zerar o placar" NAME="ZERAR" STYLE="font-family: verdana; font-size: 8 pt; font-weight: bold; color: #FE0101; background: #d0d0d0;" ONCLICK="Zera_Placar()" ONMOUSEOVER="this.style.background='#f0f0f0'" ONMOUSEOUT="this.style.background='#d0d0d0'">
+      </TD>
+    </TR>
+  <!-- PLACAR DO JOGO -->
+ 
+    <TR>
+      <TD ALIGN="CENTER" COLSPAN="3">
+        <FONT FACE="VERDANA" SIZE="1"><B>
+        Pontos<BR></B>
+        Computador:<BR>
+        <INPUT TYPE="TEXT" NAME="PONTOS_PC" READONLY SIZE="10" VALUE="0" STYLE="font-family: verdana; font-size: 8 pt;"><BR>
+        Você:<BR>
+ 
+        <INPUT TYPE="TEXT" NAME="PONTOS_USU" READONLY SIZE="10" VALUE="0" STYLE="font-family: verdana; font-size: 8 pt;"><BR>
+      </TD>
+    </TR>
+  <!-- BARRA DE MENSAGENS DO JOGO -->
+    <TR>
+      <TD BGCOLOR="#14D832" ALIGN="CENTER" COLSPAN="3">
+        <INPUT TYPE="TEXT" NAME="MENSG" READONLY SIZE="50" VALUE="Clique em 'Jogar agora' para iniciar a partida" STYLE="font-family: verdana; font-size: 9 pt; background: #87F297; color: #FE0101"><BR>
+      </TD>
+    </TR>
+ 
+  <!-- CREDITOS -->
+    <TR>
+      <TD ALIGN="CENTER" COLSPAN="3">
+        <FONT FACE="ARIAL" SIZE="1" COLOR="#000000">
+        Ricardo Alves<BR>
+        <A HREF="mailto: luiz.brandao@uvvnet.com.br">luiz.brandao@uvvnet.com.br</A>
+        ou
+        <A HREF="mailto: ricardoalvesofficial@hotmail.com">ricardoalvesofficial@hotmail.com</A>
+ 
+      </TD>
+    </TR>
+  </TABLE>
+  </FORM>
+</BODY>
+</HTML>
